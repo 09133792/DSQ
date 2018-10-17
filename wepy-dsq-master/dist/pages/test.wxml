@@ -1,0 +1,5 @@
+
+  <button bindtap="add">添加数据</button>
+  <button bindtap="query">查询数据</button>
+  <button bindtap="update">修改数据</button>
+  <button bindtap="delate">删除数据</button>

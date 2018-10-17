@@ -1,0 +1,71 @@
+
+  <view class="points">
+    <image src="../images/bc_qdyl.png" class="head_bc"/>
+    <view class="jf_content">
+      <view class="jf_header">
+        <view class="image_box">
+          <image class="avatarUrl" src="{{avatarUrl}}"/>
+        </view>
+        <view class="jf_num cfff">
+          <view class="jf_title">{{nickName}}</view>
+          <view class="jf_title mt25"><i class="iconfont icon-jifen"/>
+            <view class="cfff">积分:{{userPoint}}</view>
+          </view>
+        </view>
+        <view class="btn_jf_rule" bindtap="jfRule">积分说明</view>
+      </view>
+    </view>
+    <view class="qds_info_block">
+      <view class="jf_detai">
+        <view class="left">生涯</view>
+        <view class="right" bindtap="more">查看更多</view>
+      </view>
+      <view class="qds_detai">
+        <view class="qds_detai_block">
+          <view><text class="qds_val">40</text><text class="qds_bar">座</text></view>
+          <view class="qds_bar">登山数</view>
+        </view>
+        <view class="qds_detai_block">
+          <view><text class="qds_val">8.3w</text><text class="qds_bar">米</text></view>
+          <view class="qds_bar">总海报</view>
+        </view>
+        <view class="qds_detai_block">
+          <view><text class="qds_val">8848</text><text class="qds_bar">米</text></view>
+          <view class="qds_bar">最高海拔</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="qds_info_block">
+      <view class="jf_detai">
+        <view class="left">足迹</view>
+        <view class="right" bindtap="more">查看更多</view>
+      </view>
+      <button bindtap="checkIn" style="width:30%;font-size:30rpx;margin-top:30px;">开始登山</button>
+      <view class="tip_info">点击按钮开始登山吧</view>
+    </view>
+    <scroll-view scroll-y="true" class="swiper-item-box" style="height:{{winHeight-165}}px">
+      <!-- 积分记录 -->
+      
+  <view class="detai-content">
+    <view class="detai-list"  wx:for="{{$pointsDetail$list}}" wx:key="item">
+      <view class="detai-left">
+        <view class="detai-name" wx:if="{{item.isdeleted==0}}">每日签到获得</view>
+        <view class="detai-name" wx:if="{{item.isdeleted==2}}">连续签到7天获得</view>
+        <view class="detai-time">{{item.signTime}}</view>
+      </view>
+      <view class="detail-right">
+        <span class="detail-money">+{{item.signPoint}}</span>
+      </view>
+    </view>
+  </view>
+  <!--暂无数据显示-->
+  
+    <view class="empty-placeholder row-center"  wx:if="{{$pointsDetail$placeholder$show}}">
+        <image class="icon-xl" src="../images/empty.png"/>
+        <view class="txt">{{$pointsDetail$placeholder$message}}</view>
+    </view>
+
+
+    </scroll-view>
+  </view>
