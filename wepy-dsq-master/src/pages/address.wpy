@@ -22,7 +22,6 @@ import {
 } from '@/utils/constant';
 export default class Address extends wepy.page {
   config = {
-    navigationBarTitleText: '地址管理',
   }
   data = {
     addressList: [],
